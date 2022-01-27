@@ -12,7 +12,7 @@ namespace DAL
         public static void Seed(this ModelBuilder modelBuilder)
         {
 
-            //Employees
+            #region(Employees)
             var e1 = new Employee()
             {
                 Id = 1,
@@ -107,6 +107,7 @@ namespace DAL
             modelBuilder.Entity<EMail>()
                .HasData(em1, em2, em3, em4, em5, em6, em7, em8, em9, em10, em11, em12, em13, em14)
                ;
+            #endregion
             #region(Departments)
             var d1 = new Department()
             {
@@ -144,11 +145,11 @@ namespace DAL
                 Name = "Meat",
                 EmployeeId = e2.Id
             };
-            #endregion
             modelBuilder.Entity<Department>()
                 .HasData(d1, d2, d3, d4, d5, d6)
                 ;
 
+            #endregion
             #region("Products")
             var p1 = new Product()
             {
@@ -407,10 +408,10 @@ namespace DAL
                 EmployeeId = 2,
                 Date_Of_Last_Check = DateTime.Parse("2021-12-12")
             };
-            #endregion
             modelBuilder.Entity<Product>()
                 .HasData(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22)
                 ;
+            #endregion
             //Campain
             var c1 = new Campain() { Id = 1, Price_Drop = 10 };
             var c2 = new Campain() { Id = 2, Price_Drop = 15 };
